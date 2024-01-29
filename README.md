@@ -1,4 +1,6 @@
 Lab1-First Serverless Functions and Event Triggers 
+
+
 This repository contains three serverless functions developed using Azure Functions with Node.js. Each function serves a specific purpose as outlined below:
 
 1. Login Function
