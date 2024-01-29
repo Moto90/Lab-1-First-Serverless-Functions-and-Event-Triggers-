@@ -15,17 +15,7 @@ module.exports = async function (context, req) {
         return;
     }
 
-    // Validate username and password (add your authentication logic here)
-    const isAuthenticated = validateCredentials(username, password);
-
-    if (!isAuthenticated) {
-        context.res = {
-            status: 401,
-            body: "Invalid credentials"
-        };
-        return;
-    }
-
+ 
     // Generate JWT token
     const jwtToken = generateJwtToken(username);
 
@@ -42,11 +32,6 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-function validateCredentials(username, password) {
-    // Implement your authentication logic here
-    // For simplicity, assume any non-empty username and password are valid
-    return username && password;
-}
 
 function generateJwtToken(username) {
     // Replace 'your-secret-key' with your actual secret key
@@ -55,7 +40,7 @@ function generateJwtToken(username) {
     // Define JWT payload
     const payload = {
         sub: username,
-        // Add additional claims if needed
+
     };
 
     // Generate JWT token
